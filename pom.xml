@@ -46,11 +46,11 @@
     </build>
     <distributionManagement>
         <snapshotRepository>
-            <id>knowhub-maven-repo</id>
+            <id>knowhub-maven-repo-snapshot</id>
             <url>gs://knowhub-maven-repo/snapshot</url>
         </snapshotRepository>
         <repository>
-            <id>knowhub-maven-repo</id>
+            <id>knowhub-maven-repo-release</id>
             <url>gs://knowhub-maven-repo/release</url>
         </repository>
     </distributionManagement>
