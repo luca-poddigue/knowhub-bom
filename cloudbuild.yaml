@@ -1,5 +1,10 @@
+substitutions:
+  _MASTER_BRANCH: master
 steps:
   - id: 'Build BOM and deploy to GCS'
     name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: 'bash'
-    args: ['mvnw', '-B', 'deploy']
+    args:
+      - '-c'
+      - |
+        [[ "$BRANCH_NAME" == "${_MASTER_BRANCH}" ]] && mvnw -B deploy || mvn -B verify
