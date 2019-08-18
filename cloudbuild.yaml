@@ -7,4 +7,4 @@ steps:
     args:
       - '-c'
       - |
-        [[ "$BRANCH_NAME" == "${_MASTER_BRANCH}" ]] && mvnw -B deploy || mvn -B verify
+        [[ "$BRANCH_NAME" == "${_MASTER_BRANCH}" ]] && mvnw -B deploy || mvnw -B verify
