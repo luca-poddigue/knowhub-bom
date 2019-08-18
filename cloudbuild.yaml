@@ -1,0 +1,5 @@
+steps:
+  - id: 'Build BOM and deploy to GCS'
+    name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'bash'
+    args: ['mvnw', '-B', 'deploy']
