@@ -6,7 +6,7 @@ secrets:
 substitutions:
   _MASTER_BRANCH: master
 steps:
-  - id: 'Build BOM and deploy to GCS'
+  - id: 'Build BOM and deploy to Maven repo on Github'
     name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: 'bash'
     secretEnv:
