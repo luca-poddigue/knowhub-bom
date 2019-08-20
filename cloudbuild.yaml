@@ -15,5 +15,5 @@ steps:
     args:
       - '-c'
       - |
-        [[ "$BRANCH_NAME" == "${_MASTER_BRANCH}" ]] && bash mvnw -B deploy ||
-        bash mvnw -B verify
+        [[ "$BRANCH_NAME" == "${_MASTER_BRANCH}" ]] && bash mvnw -B -s .mvn/settings.xml deploy ||
+        bash mvnw -B -s .mvn/settings.xml verify
