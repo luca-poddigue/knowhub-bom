@@ -3,10 +3,8 @@ secrets:
     secretEnv:
       GITHUB_REPO_USERNAME: CiQAMCvQs+rPZi4iMTlJsc4V8FjDuPJQL/tA4HeOnWb17ypezmQSNgBppKKBft7eZEZVpJwy25V3h8wyTbo6dvHIJvOxXd6RxyjCKuT7Xt/HgWs66Bxts55RtlhTIA==
       GITHUB_REPO_PASSWORD: CiQAMCvQs49gqut4/Eh9s8BYYN6lKjVOdBNzRQVPKGG0ZBFY6uwSNwBppKKB0XqGci+hEWmEjNWmpjPf+u/6DUGxrI1fweBmENMUH6yKccX7McYKit9qHE9aUFNqIyA=
-substitutions:
-  _MASTER_BRANCH: master
 steps:
-  - id: 'Build BOM and deploy to Maven repo on Github'
+  - id: 'Maven build'
     name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: 'bash'
     secretEnv:
@@ -14,6 +12,4 @@ steps:
       - GITHUB_REPO_PASSWORD
     args:
       - '-c'
-      - |
-        [[ "$BRANCH_NAME" == "${_MASTER_BRANCH}" ]] && bash mvnw -B -s .mvn/settings.xml deploy ||
-        bash mvnw -B -s .mvn/settings.xml verify
+      - mvnw -B -s .mvn/settings.xml verify
