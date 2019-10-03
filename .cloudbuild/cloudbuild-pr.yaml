@@ -12,4 +12,4 @@ steps:
       - GITHUB_REPO_PASSWORD
     args:
       - '-c'
-      - mvnw -B -s .mvn/settings.xml verify
+      - bash mvnw -B -s .mvn/settings.xml verify

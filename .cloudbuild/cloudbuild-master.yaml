@@ -12,4 +12,4 @@ steps:
       - GITHUB_REPO_PASSWORD
     args:
       - '-c'
-      - mvnw -B -s .mvn/settings.xml deploy
+      - bash mvnw -B -s .mvn/settings.xml deploy
